@@ -7,7 +7,11 @@ public class HousekeepingManager {
         taskCount++;
     }
 
-    public void printTasksForRoom(String roomId) {
+    public int getTaskCount() {
+        return taskCount;
+    }
+
+    public void displayTasksForRoom(String roomId) {
         System.out.println("Tasks for Room " + roomId + ":");
         for (int i = 0; i < taskCount; i++) {
             if (tasks[i].getRoom().getId().equals(roomId)) {
@@ -23,6 +27,14 @@ public class HousekeepingManager {
                 tasks[i].setStatus(newStatus);
                 break;
             }
+        }
+    }
+
+    public void displayAllTasks() {
+        System.out.println("=== All Housekeeping Tasks ===");
+        for(int i = 0; i < taskCount; i++) {
+            System.out.println(tasks[i].toString());
+            System.out.println("-----------------------------");
         }
     }
 }

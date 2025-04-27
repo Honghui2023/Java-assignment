@@ -10,6 +10,7 @@ public class HkTask {
     private String status;
     private String notes;
     private List<ItemStatus> itemStatuses;
+    private static final String[] VALID_STATUSES = {"Pending", "In Progress", "Completed", "Cancelled"};
 
     public HkTask(String taskID, Room room, Staff assignedTo, LocalDate date, String status, String notes) {
         this.taskID = taskID;
@@ -42,6 +43,12 @@ public class HkTask {
     }
 
     // setter
+    public void setTaskID(String taskID) {
+        if(taskID == null && taskID.length() > 6) {
+            System.out.println("Task ID must be in format TXXXX");
+        }
+        this.taskID = taskID;
+    }
     public void setStatus(String status) {
         this.status = status;
     }
@@ -80,10 +87,14 @@ public class HkTask {
         // Simple item status listing
         result += "Items:\n";
         for (ItemStatus item : itemStatuses) {
-            result += "- " + item.getItem().getDisplayName() + ": " + item.status() + "\n";
+            result += "- " + item.getItem().getDisplayName() + ": " + item.getStatus() + "\n";
         }
     
         return result;
+    }
+
+    public static String[] getValidStatus() {
+        return VALID_STATUSES;
     }
 
 }

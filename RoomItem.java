@@ -13,11 +13,17 @@ public class RoomItem {
         new RoomItem("Room Chard")
     };
 
+    public static RoomItem[] DEFAULT_ITEMS;
+
     private final String displayName;
     public RoomItem(String displayName) {
         this.displayName = displayName;
     }
     public String getDisplayName() {
         return displayName;
+    }
+    public void setStatus(String status) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setStatus'");
     }
 }
