@@ -18,7 +18,7 @@ public class RoomItem {
     }
 
     public static void main(String[] args) {
-        // Example of accessing the dictionary
+        
         RoomItem item = ALL.get("01");
         System.out.println("Item with key 01: " + item.getName());
     }
