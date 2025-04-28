@@ -1,29 +1,25 @@
+import java.util.HashMap;
+
 public class RoomItem {
-    public static final RoomItem[] ALL = {
-        new RoomItem("Towel"),
-        new RoomItem("Pillow"),
-        new RoomItem("Bed"),
-        new RoomItem("Mirror"),
-        new RoomItem("Chair"),
-        new RoomItem("Door"),
-        new RoomItem("Hairdryer"),
-        new RoomItem("Window"),
-        new RoomItem("Glass"),
-        new RoomItem("Fridge"),
-        new RoomItem("Room Chard")
-    };
-
-    public static RoomItem[] DEFAULT_ITEMS;
-
-    private final String displayName;
-    public RoomItem(String displayName) {
-        this.displayName = displayName;
+    static {
+        ALL = new HashMap<>();
+        ALL.put("01", new RoomItem("Towel"));
+        ALL.put("02", new RoomItem("Pillow"));
+        ALL.put("03", new RoomItem("Bed"));
+        ALL.put("04", new RoomItem("Mirror"));
+        ALL.put("05", new RoomItem("Chair"));
+        ALL.put("06", new RoomItem("Door"));
+        ALL.put("07", new RoomItem("Hairdryer"));
+        ALL.put("08", new RoomItem("Window"));
+        ALL.put("09", new RoomItem("Glass"));
+        ALL.put("10", new RoomItem("Fridge"));
+        ALL.put("11", new RoomItem("Light bulb"));
+        ALL.put("12", new RoomItem("Room Chard"));
     }
-    public String getDisplayName() {
-        return displayName;
-    }
-    public void setStatus(String status) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'setStatus'");
+
+    public static void main(String[] args) {
+        // Example of accessing the dictionary
+        RoomItem item = ALL.get("01");
+        System.out.println("Item with key 01: " + item.getName());
     }
 }
